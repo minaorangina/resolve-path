@@ -12,6 +12,11 @@ Resolve a relative path against a root path with validation.
 This module would protect against commons attacks like `GET /../file.js`
 which reaches outside the root folder.
 
+Using this module is a layer of security against cross site scripting attacks, and other forms of malicious code injection. These attacks typically involve users accessing non-public folders on a server, or terminating routines through the use of null bytes in order to execute code on a server in a way that is not controlled by the server's owner.
+The module handles incoming url requests, and checks them against four types of malicious attack.
+
+Absolute paths can be used to access files that would be otherwise hidden from the user.
+
 ## Installation
 
 ```sh
